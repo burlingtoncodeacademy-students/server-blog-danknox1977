@@ -1,9 +1,32 @@
 [
-    {
-        "post_id": 1,
-        "title": "First Blog Post",
-        "author": "Paul Niemczyk",
-        "body": "These student devs keep getting younger and smarter"
-    }
+  {
+    "post_id": 1,
+    "title": "First Blog Post",
+    "author": "Paul Niemczyk",
+    "body": "These student devs keep getting younger and smarter"
+  },
+  {
+    "post_id": 2,
+    "title": "My First Blog",
+    "author": "anonymous",
+    "body": "Not sure what you expected to see here"
+  },
+  {
+    "post_id": 3,
+    "title": "My Second Blog",
+    "author": "anonymous",
+    "body": "We're all very impressed"
+  },
+  {
+    "post_id": 4,
+    "title": "My Third Blog",
+    "author": "anonymous",
+    "body": "Huzzah"
+  },
+  {
+    "post_id": 5,
+    "title": "Test Post",
+    "author": "Robert Paulson",
+    "body": "body body body body"
+  }
 ]
-
