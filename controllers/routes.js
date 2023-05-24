@@ -33,7 +33,7 @@ router.post('/blogs', (req, res) => {
   blogData.push(newBlog);
   updateBlog();
 
-  res.status(201).json(newBlog);
+  res.status(200).json(newBlog);
 });
 
 // Replace a specific blog by post_id
@@ -50,24 +50,47 @@ router.put('/blogs/:post_id', (req, res) => {
 
     res.json(blog);
   } else {
-    res.status(404).json({ error: 'The blog you entered does not exist' });
+    res.status(404).json({ error: 'The blog you want to change does not exist' });
   }
 });
+
+// Patch particular parameters
+router.patch('/blogs/:post_id', (req, res) => {
+    const blogId = parseInt(req.params.post_id);
+    const blogPatch = blogData.find((blog) => blog.post_id === blogId);
+    if (blogPatch) {
+      if (req.body.title) {
+        blogPatch.title = req.body.title;
+      }
+      if (req.body.author) {
+        blogPatch.author = req.body.author;
+      }
+      if (req.body.body !== undefined) {
+        blogPatch.body = req.body.body;
+      }
+      res.json(blogPatch);
+      updateBlog();
+    } else {
+      res.status(404).json({ error: 'The blog you want to patch does not exist' });
+    }
+  });
 
 // Delete a specific blog by post_id
 router.delete('/blogs/:post_id', (req, res) => {
-  const { post_id } = req.params;
-  const index = blogData.findIndex((blog) => blog.post_id === parseInt(post_id));
 
-  if (index !== -1) {
-    const deletedBlog = blogData.splice(index, 1)[0];
-    updateBlog();
-
-    res.json(deletedBlog);
-  } else {
-    res.status(404).json({ error: 'The blog you entered does not exist' });
-  }
-});
+    const index = blogData.findIndex(
+        post => parseInt(post.post_id) === parseInt(req.params.post_id)
+      )
+      const deleted = blogData.splice(index, 1)
+    
+      res.json({
+        message: 'deletion successful',
+        recordsDeleted: deleted,
+        
+      })
+      updateBlog()
+    })
+    
 
 // Update blog.json
 function updateBlog() {

@@ -10,7 +10,7 @@ const app = express()
 app.use(express.json())
 
 //set global variables
-const PORT = 3636
+
 
 const router = require('./controllers/routes.js')
 
@@ -18,7 +18,7 @@ const router = require('./controllers/routes.js')
 
 app.use('/', router)
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
   console.log('Hey, I\'m listening here!')
 })
 

@@ -8,14 +8,8 @@
   {
     "post_id": 2,
     "title": "My First Blog",
-    "author": "anonymous",
+    "author": "Robert Paulson",
     "body": "Not sure what you expected to see here"
-  },
-  {
-    "post_id": 3,
-    "title": "My Second Blog",
-    "author": "anonymous",
-    "body": "We're all very impressed"
   },
   {
     "post_id": 4,
@@ -25,8 +19,14 @@
   },
   {
     "post_id": 5,
-    "title": "Test Post",
+    "title": "My Fourth Blog",
     "author": "Robert Paulson",
     "body": "body body body body"
+  },
+  {
+    "post_id": 6,
+    "title": "Test Test Post",
+    "author": "Robert Paulson",
+    "body": "body body body body?"
   }
 ]
